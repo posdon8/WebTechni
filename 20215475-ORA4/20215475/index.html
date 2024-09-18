@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+		<title>Gmail API with AJAX</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="authenticate.js"></script>
+		<script src="services.js"></script>
+		<script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+		<script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+  </head>
+
+  <body class="main-body">
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <div id="g_id_onload"
+			data-client_id="420371512875-kji221gg35pl94kvg8rmk3r3dtko052e.apps.googleusercontent.com"
+			data-context="signin"
+			data-ux_mode="popup"
+			data-callback="handleCredentialResponse"
+			data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+			data-type="standard"
+			data-size="large"
+			data-theme="outline"
+			data-text="sign_in_with"
+			data-shape="rectangular"
+			data-logo_alignment="left">
+    </div>
+
+    <button
+			id="compose-button"
+			type="button"
+			class="display-none"
+			data-bs-toggle="modal"
+			data-bs-target="#newMailModal"
+		>New mail</button>
+
+    <button
+			id="refresh-button"
+			type="button"
+			class="display-none"
+		>Refresh</button>
+
+    <button
+			id="signout-button"
+			type="button"
+			class="display-none"
+		>Sign Out</button>
+
+    <div id="content" class="display-none">
+			<!-- Mail List -->
+			<table id="mail-table" class="mail-table">
+				<thead>
+					<tr>
+						<th class='table-header'>Sender</th>
+						<th class='table-header'>Subject</th>
+						<th class='table-header'>Snippet</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<button id="more-mail-button">More mail</button>
+
+			<!-- Mail detail Modal -->
+			<div class="modal fade" id="detailMailModal" tabindex="-1" aria-labelledby="detailMailModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-xl">
+					<div class="modal-content">
+						<div class="modal-header">
+							<div>
+								<h5 class="modal-title" id="detailMailModalLabel">Mail detail</h5>
+								<p id="detailMailModalTimeLabel">Time</p>
+							</div>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body" id="detailMailModalBody">
+							<iframe></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- New mail Modal -->
+			<div class="modal fade" id="newMailModal" tabindex="-1" aria-labelledby="newMailModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="newMailModalLabel">Create new mail</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body" id="newMailModalBody">
+							<form>
+								<input class="email-input" placeholder="To"/>
+								<hr/>
+								<input class="email-input" placeholder="Subject"/>
+								<hr/>
+								<textarea class="width100"></textarea>
+								<input type="file" id="attachmentInput" multiple/>
+								<ul id="attachmentList"></ul>
+								<button type="button" id="draft-button" class="display-none">Create draft</button>
+								<button type="button" id="send-button">Send email</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+  </body>
+</html>
