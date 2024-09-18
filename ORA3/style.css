@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+i{
+    cursor: pointer;
+}
+.page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    margin: 25px;
+    border: 2px solid black ;
+    width: 70%;
+    min-width: 500px;
+}
+#header{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+h1{
+    font-size: 50px;
+    margin-right: 20px;
+}
+#pdf-download{
+    padding-left: 10px;
+    font-size: 40px;
+    color: red;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.group-item{
+    width: 80%;
+    display: block;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid orange;
+    border-top: none;
+    padding: 0px 10px 20px 10px;
+}
+.header-group .fa-trash-o{
+    margin-right: 20px;
+}
+.header-group{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+.header-group span{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.info-item{
+    display: flex;
+    margin-top: 10px;
+    padding: 5px;
+    padding-left: 15%;
+    font-size: 25px;
+}
+.name-item{
+    width: 40%;
+    cursor: pointer;
+}
+.info-item .fa-trash-o{
+    margin-left: 10px;
+}
+.value{
+    cursor: pointer;
+}
+.list-value{
+    width: 40%;
+}
+.id-header{
+    color: blue;
+    width: 40%;
+}
+input{
+    font-size: 20px;
+}

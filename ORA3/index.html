@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="page">
+        <div class="container" id="container">
+            <div id="header">
+                <h1>Thông Tin Cá Nhân</h1>
+                <i class="fa fa-file-pdf-o" id="pdf-download"></i>
+            </div>
+            <div class="group-item">
+                <div class="header-group">
+                    <span class="id-header" id="id1" ondblclick="changeText(this)">Thong tin sinh vien_20215475</span>
+                    <span class="add-info" onclick="addInfo(this)">&lt; Add info item &gt; </span>
+                    <span class="add-group" onclick="addGroup()">&lt; Add group item &gt; </span>
+                </div>
+                <div class="info-item" style="display: none;">
+                    <span class="name-item" ondblclick="changeText(this)">Ho va ten</span>
+                    <span class="list-value">
+                        <span class="value" ondblclick="changeText(this)"></span>
+                        <input type="text">
+                    </span>
+                    <i class="fa fa-trash-o"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
