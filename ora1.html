@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORA 1</title>
+    <link rel="stylesheet" href="ora1.css"/>
+  </head>
+  <body>
+    <div class="content-title center">
+      THÔNG TIN CÁ NHÂN
+      <hr>
+    </div>
+    <div>
+      <div id="studentInfoDiv">
+        <div class="content-title">
+          <div class="flex">
+            <span id="title1">THÔNG TIN SINH VIÊN</span>
+            <button 
+              id="editButton"
+              class="basic-button"
+              href="ora1_2.html"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+              </svg>
+            </button>
+          </div>
+          <hr class="hr-content">
+        </div>
+        <div class="flex">
+          <div class="pfp-container">
+            <img 
+              id="studentImage"
+              class="profile-picture"
+              src="ava.png"
+              alt="img"
+            />
+            <div class="center">
+              <button id="imageChangeButton" style="display: none; margin-bottom: 10px;">Change image</button>
+            </div>
+            <div class="center flex">
+              <span class="item">MSSV:</span>
+              <span 
+                id="mssv" 
+                class="item-data"
+              >20215475</span>
+              <input 
+                id="mssvEdit"
+                name="mssv"
+                class="item-data"
+                style="display: none;"
+                type="number"
+                required
+              />
+            </div>
+          </div>
+          <div class="item-container">
+            <span class="item">Họ và tên :</span>
+            <span 
+              id="fullname" 
+              class="item-data"
+            >Vũ Sĩ Tâm</span>
+            <input 
+              id="fullnameEdit"
+              name="fullname"
+              class="item-data" 
+              style="display: none;"
+              type="text"
+              required
+            /><br>
+
+            <span class="item">Năm vào trường :</span> 
+            <span 
+              id="yearEnter"
+              class="item-data"
+            >2021</span>
+            <input 
+              id="yearEnterEdit"
+              name="enteryear"
+              class="item-data"
+              style="display: none;"
+              type="number"
+              required
+            /><br>
+
+            <span class="item">Bậc đào tạo :</span> 
+            <span 
+              id="trainType"
+              class="item-data"
+            >Đại học đại trà</span>
+            <select 
+              id="trainTypeEdit"
+              name="traintype"
+              class="item-data"
+              style="display: none;"
+            >
+              <option>Đại học đại trà</option>
+              <option>Đào tạo tài năng</option>
+              <option>Khác</option>
+            </select><br>
+
+            <span class="item">Chương trình :</span> 
+            <span 
+              id="program"
+              class="item-data"
+            >Khoa học Máy tính 2021</span>
+            <input 
+              id="programEdit"
+              name="program"
+              class="item-data"
+              style="display: none;"
+              type="text"
+              required
+            /><br>
+
+            <span class="item">Khoa/Viện quản lý :</span> 
+            <span 
+              id="manageschool"
+              class="item-data"
+            >Trường Công nghệ thông tin và Truyền thông</span>
+            <select 
+              id="manageschoolEdit"
+              name="manageschool"
+              class="item-data"
+              style="display: none;"
+            >
+              <option>Trường Công nghệ thông tin và Truyền thông</option>
+              <option>Trường Cơ khí</option>
+              <option>Trường Điện - Điện tử</option>
+              <option>Trường Hoá và Khoa học sự sống</option>
+              <option>Trường Vật liệu</option>
+              <option>Khoa Toán - Tin</option>
+              <option>Khoa Vật lý Kỹ thuật</option>
+              <option>Viện Kinh tế và Quản lý</option>
+              <option>Khoa Ngoại ngữ</option>
+              <option>Khoa Khoa học và Công nghệ Giáo dục</option>
+            </select><br>
+
+            <span class="item">Tình trạng học tập :</span> 
+            <span 
+              id="studystate"
+              class="item-data"
+            >Học</span>
+            <select 
+              id="studystateEdit"
+              name="studystate"
+              class="item-data"
+              style="display: none;"
+            >
+              <option>Học</option>
+              <option>Nghỉ</option>
+            </select><br>
+          </div>
+          <div class="item-container">
+            <span class="item">Giới tính :</span> 
+            <span 
+              id="gender"
+              class="item-data"
+            >Nam</span>
+            <select 
+              id="genderEdit"
+              name="gender"
+              class="item-data"
+              style="display: none;"
+            >
+              <option>Nam</option>
+              <option>Nữ</option>
+            </select><br>
+
+            <span class="item">Lớp :</span> 
+            <span 
+              id="classes"
+              class="item-data"
+            >Khoa học máy tính 05-K66</span>
+            <input 
+              id="classesEdit"
+              name="classes"
+              class="item-data"
+              style="display: none;"
+              type="text"
+              required
+            /><br>
+
+            <span class="item">Khóa học :</span> 
+            <span 
+              id="course"
+              class="item-data"
+            >66</span>
+            <input 
+              id="courseEdit"
+              name="course"
+              class="item-data" 
+              style="display: none;"
+              type="number"
+              required
+            /><br>
+
+            <span class="item">Email :</span> 
+            <span 
+              id="email"
+              class="item-data"
+            >tam.vs215475@sis.hust.edu.vn</span>
+            <input 
+              id="emailEdit"
+              name="email"
+              class="item-data" 
+              style="display: none;"
+              type="email"
+              required
+            /><br>
+          </div>
+        </div>
+        <div 
+          id="editButtonDiv"
+          class="flex justify-center"
+          style="display: none;"
+        >
+          <button 
+            id="saveButton"
+            class="basic-button"
+          >
+            SAVE
+          </button>
+          <button 
+            id="cancelButton"
+            class="basic-button"
+          >
+            CANCEL
+          </button>
+        </div>
+      </div>
+      <div id="studyInfoDiv">
+        <div class="content-title">
+          <span>THÔNG TIN HỌC TẬP</span>
+          <hr class="hr-content">
+        </div>
+        
+        <div class="flex">
+          <div class="item-container">
+            <span class="item">Tổng kết học kỳ :</span> 
+            <span class="item-data">20231</span><br>
+
+            <span class="item">Trung bình tích lũy :</span> 
+            <span class="item-data">2.78</span><br>
+
+            <span class="item">Số TC nợ đăng ký :</span> 
+            <span class="item-data">6</span><br>
+          </div>
+          <div class="item-container">
+            <span class="item">Số TC tích lũy :</span> 
+            <span class="item-data">76</span><br>
+            
+            <span class="item">Trình độ sinh viên :</span> 
+            <span class="item-data">3</span><br>
+
+            <span class="item">Mức cảnh báo :</span> 
+            <span class="item-data">M0</span><br>
+          </div>
+        </div>
+      </div>
+      <div id="individualInfoDiv">
+        <div class="content-title">
+          <span>THÔNG TIN CÁ NHÂN</span>
+          <hr class="hr-content">
+        </div>
+        <div class="flex">
+          <div class="item-container">
+            <span class="item">Dân tộc :</span> 
+            <span class="item-data">KINH</span><br>
+
+            <span class="item">Năm TN cấp 3 :</span> 
+            <span class="item-data">2021</span><br>
+
+            <span class="item">Địa chỉ :</span> 
+            <span class="item-data">THỊ TRẤN AN CHÂU, HUYỆN SƠN ĐỘNG, TỈNH BẮC GIANG</span><br>
+
+            <span class="item">Số CMTND :</span> 
+            <span class="item-data">024***61</span><br>
+
+            <span class="item">Nơi cấp :</span> 
+            <span class="item-data">BẮC GIANG</span><br>
+
+            <span class="item">Họ tên bố :</span> 
+            <span class="item-data">VŨ VĂN ĐỒNG</span><br>
+
+            <span class="item">Năm sinh :</span> 
+            <span class="item-data">1977</span><br>
+
+            <span class="item">Nghề nghiệp :</span> 
+            <span class="item-data">TÀI XẾ</span><br>
+
+            <span class="item">Điện thoại :</span> 
+            <span class="item-data">024*****86</span><br>
+
+            <span class="item">Email :</span> 
+            <span class="item-data">KHÔNG CÓ</span><br>
+          </div>
+          <div class="item-container">
+            <span class="item">Tôn giáo :</span> 
+            <span class="item-data">KHÔNG</span><br>
+
+            <span class="item">Trường THPT :</span> 
+            <span class="item-data">THPT SƠN ĐỘNG SỐ 1</span><br>
+
+            <span class="item">Hộ khẩu :</span> 
+            <span class="item-data">THỊ TRẤN AN CHÂU, HUYỆN SƠN ĐỘNG, TỈNH BẮC GIANG</span><br>
+
+            <span class="item">Số Điện thoại :</span> 
+            <span class="item-data">039***93</span><br>
+
+            <span class="item">Họ tên mẹ :</span> 
+            <span class="item-data">CHU THỊ HẢO</span><br>
+
+            <span class="item">Năm sinh :</span> 
+            <span class="item-data">1978</span><br>
+
+            <span class="item">Nghề nghiệp :</span> 
+            <span class="item-data">GIÁO VIÊN</span><br>
+
+            <span class="item">Điện thoại :</span> 
+            <span class="item-data">098*****88</span><br>
+
+            <span class="item">Email :</span> 
+            <span class="item-data">chuhao78@gmail.com</span><br>
+          </div>
+        </div>
+      </div>
+      <div 
+        id="noticeDiv"
+        class="notice"
+      >
+        <span class="item">Ghi chú:</span>
+        <span class="item-data">Nếu sinh viên thấy thông tin của mình chưa chính xác, xin vui lòng liên hệ phòng Đào tạo để cập nhật lại.</span>
+      </div>
+    </div>
+    <script>
+      document.getElementById("editButton").onclick = function() {editClick()};
+      document.getElementById("saveButton").onclick = function() {saveClick()};
+      document.getElementById("cancelButton").onclick = function() {cancelClick()};
+      document.getElementById("imageChangeButton").onclick = function() {editImage()};
+
+      var imageBackup;
+
+      function editImage() {
+        let input = document.createElement('input');
+        input.type = 'file';
+        input.onchange = _this => {
+          let files = input.files;
+          document.getElementById("studentImage");
+          if (files && files[0]) {
+            let reader = new FileReader();
+            reader.onload = function(event) {
+                document.getElementById("studentImage").src = event.target.result;
+            };
+            reader.readAsDataURL(files[0]);
+        }
+        };
+        input.click();
+      }
+
+      function editClick() {
+        document.getElementById("studyInfoDiv").style.display="none";
+        document.getElementById("individualInfoDiv").style.display="none";
+        document.getElementById("noticeDiv").style.display="none";
+        document.getElementById("title1").innerHTML="SỬA THÔNG TIN SINH VIÊN";
+        document.getElementById("editButtonDiv").style.display="";
+        document.getElementById("editButton").style.display="none";
+        document.getElementById("imageChangeButton").style.display="";
+        imageBackup = document.getElementById("studentImage").src;
+
+        // Data editer
+        ChangeEditorDisplay(false);
+
+        // Data holder
+        ChangeHolderDisplay(true);
+
+        // Insert Information to Editor
+        document.getElementById("mssvEdit").value=document.getElementById("mssv").innerHTML;
+        document.getElementById("fullnameEdit").value=document.getElementById("fullname").innerHTML;
+        document.getElementById("yearEnterEdit").value=document.getElementById("yearEnter").innerHTML;
+        document.getElementById("trainTypeEdit").selectedIndex=FindOption(document.getElementById("trainTypeEdit"), document.getElementById("trainType").innerHTML);
+        document.getElementById("programEdit").value=document.getElementById("program").innerHTML;
+        document.getElementById("manageschoolEdit").selectedIndex=FindOption(document.getElementById("manageschoolEdit"), document.getElementById("manageschool").innerHTML);
+        document.getElementById("studystateEdit").selectedIndex=FindOption(document.getElementById("studystateEdit"), document.getElementById("studystate").innerHTML);
+        document.getElementById("genderEdit").selectedIndex=FindOption(document.getElementById("genderEdit"), document.getElementById("gender").innerHTML);
+        document.getElementById("classesEdit").value=document.getElementById("classes").innerHTML;
+        document.getElementById("courseEdit").value=document.getElementById("course").innerHTML;
+        document.getElementById("emailEdit").value=document.getElementById("email").innerHTML;
+      }
+
+      function saveClick() {
+        document.getElementById("studyInfoDiv").style.display="";
+        document.getElementById("individualInfoDiv").style.display="";
+        document.getElementById("noticeDiv").style.display="";
+        document.getElementById("title1").innerHTML="THÔNG TIN SINH VIÊN";
+        document.getElementById("editButtonDiv").style.display="none";
+        document.getElementById("editButton").style.display="";
+        document.getElementById("imageChangeButton").style.display="none";
+
+        // Data editer
+        ChangeEditorDisplay(true);
+
+        // Data holder
+        ChangeHolderDisplay(false);
+
+        // Save Information
+        document.getElementById("mssv").innerHTML=document.getElementById("mssvEdit").value;
+        document.getElementById("fullname").innerHTML=document.getElementById("fullnameEdit").value;
+        document.getElementById("yearEnter").innerHTML=document.getElementById("yearEnterEdit").value;
+        document.getElementById("trainType").innerHTML=document.getElementById("trainTypeEdit").options[document.getElementById("trainTypeEdit").selectedIndex].innerHTML;
+        document.getElementById("program").innerHTML=document.getElementById("programEdit").value;
+        document.getElementById("manageschool").innerHTML=document.getElementById("manageschoolEdit").options[document.getElementById("manageschoolEdit").selectedIndex].innerHTML;
+        document.getElementById("studystate").innerHTML=document.getElementById("studystateEdit").options[document.getElementById("studystateEdit").selectedIndex].innerHTML;
+        document.getElementById("gender").innerHTML=document.getElementById("genderEdit").options[document.getElementById("genderEdit").selectedIndex].innerHTML;
+        document.getElementById("classes").innerHTML=document.getElementById("classesEdit").value;
+        document.getElementById("course").innerHTML=document.getElementById("courseEdit").value;
+        document.getElementById("email").innerHTML=document.getElementById("emailEdit").value;
+      }
+
+      function cancelClick() {
+        document.getElementById("studyInfoDiv").style.display="";
+        document.getElementById("individualInfoDiv").style.display="";
+        document.getElementById("noticeDiv").style.display="";
+        document.getElementById("title1").innerHTML="THÔNG TIN SINH VIÊN";
+        document.getElementById("editButtonDiv").style.display="none";
+        document.getElementById("editButton").style.display="";
+        document.getElementById("imageChangeButton").style.display="none";
+        document.getElementById("studentImage").src = imageBackup;
+
+        // Data editer
+        ChangeEditorDisplay(true);
+
+        // Data holder
+        ChangeHolderDisplay(false);
+      }
+
+      function ChangeEditorDisplay(none) {
+        document.getElementById("mssvEdit").style.display=none?"none":"";
+        document.getElementById("fullnameEdit").style.display=none?"none":"";
+        document.getElementById("yearEnterEdit").style.display=none?"none":"";
+        document.getElementById("trainTypeEdit").style.display=none?"none":"";
+        document.getElementById("programEdit").style.display=none?"none":"";
+        document.getElementById("manageschoolEdit").style.display=none?"none":"";
+        document.getElementById("studystateEdit").style.display=none?"none":"";
+        document.getElementById("genderEdit").style.display=none?"none":"";
+        document.getElementById("classesEdit").style.display=none?"none":"";
+        document.getElementById("courseEdit").style.display=none?"none":"";
+        document.getElementById("emailEdit").style.display=none?"none":"";
+      }
+
+      function ChangeHolderDisplay(none) {
+        document.getElementById("mssv").style.display=none?"none":"";
+        document.getElementById("fullname").style.display=none?"none":"";
+        document.getElementById("yearEnter").style.display=none?"none":"";
+        document.getElementById("trainType").style.display=none?"none":"";
+        document.getElementById("program").style.display=none?"none":"";
+        document.getElementById("manageschool").style.display=none?"none":"";
+        document.getElementById("studystate").style.display=none?"none":"";
+        document.getElementById("gender").style.display=none?"none":"";
+        document.getElementById("classes").style.display=none?"none":"";
+        document.getElementById("course").style.display=none?"none":"";
+        document.getElementById("email").style.display=none?"none":"";
+      }
+
+      function FindOption(element, text) {
+        var index = 0;
+        for(; index < element.length; index++){
+          if(element.options[index].innerHTML === text){
+            break;
+          }
+        }
+        return index;
+      }
+    </script>
+  </body>
+</html>
